@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'sellItemPage.dart';
-
+import 'sellItemPage.dart';                 //판매 게시글 화면
+import 'createSellPage.dart';               //판매 게시글 생성 화면
+import 'sellHistoryPage.dart';              //물건 판매 내역 화면
+import 'myDibsPage.dart';                   //내 찜 목록 화면
+import 'purchaseHistoryPage.dart';          //물건 구매 내역 화면
 
 void main() {
   runApp(const MyApp());
@@ -19,10 +22,17 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: sellItemPage(),
+      //home: SellHistoryPage(),
+      //home: CreateSellPage(),
+      home: sellItemPage(), //고다은이 이것보다 좋은 페이지 만들었음.
+      //home: MyDibsPage(),
+      //home: PurchaseHistoryPage(),
+
+
     );
   }
 }
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
