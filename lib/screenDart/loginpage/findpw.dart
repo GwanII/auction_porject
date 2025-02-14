@@ -1,5 +1,5 @@
-import 'package:auction_porject/screenDart/Signin.dart';
-import 'package:auction_porject/screenDart/changepw.dart';
+import 'package:auction_porject/screenDart/loginpage/Signin.dart';
+import 'package:auction_porject/screenDart/loginpage/changepw.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

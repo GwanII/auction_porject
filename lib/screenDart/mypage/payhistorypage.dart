@@ -1,5 +1,8 @@
+import 'package:auction_porject/screenDart/chattpage/chatPage.dart';
+import 'package:auction_porject/screenDart/mainpage/mainPage.dart';
 import 'package:flutter/material.dart';
-import 'package:auction_porject/screenDart/mypage.dart';
+import 'package:auction_porject/screenDart/mypage/mypage.dart';
+import 'package:auction_porject/screenDart/mypage/currentTransactionPop.dart';
 import 'package:flutter/foundation.dart';
 
 
@@ -13,8 +16,13 @@ class payhistory extends StatelessWidget {
       child: MaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            backgroundColor: Color.fromRGBO(166,204,229, 1),
-            title: Text("Auction"),
+            backgroundColor: Color.fromRGBO(166, 204, 229, 1),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
           ),
 
 
@@ -346,24 +354,55 @@ class payhistory extends StatelessWidget {
 
 
           bottomNavigationBar: BottomAppBar(
-            child: SizedBox(
-              height: 20,
+            color: Color(0xFFB0E0E6),
+            child: Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Icon(Icons.home),
-                  Icon(Icons.chat_bubble),
-                  Icon(Icons.person),
-                  GestureDetector(
-                    onTap: (){
+                  IconButton(
+                    icon: Icon(Icons.home),
+                    color: Colors.black,
+                    iconSize: 35,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MainPage()),
+                      );
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.chat),
+                    color: Colors.grey,
+                    iconSize: 35,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ChatPage()),
+                      );
+                    },
+
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.person),
+                    color: Colors.grey,
+                    iconSize: 35,
+                    onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => mypage()),
                       );
                     },
-
-                    child: Icon(Icons.arrow_back),
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.swap_horiz),
+                    color: Colors.grey,
+                    iconSize: 35,
+                    onPressed: () {
+                      showCurrentTransaction(context); // 팝업 다이얼로그 호출
+                    },
                   ),
                 ],
               ),

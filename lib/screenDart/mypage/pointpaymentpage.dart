@@ -1,9 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:auction_porject/screenDart/mypage.dart';
+import 'package:auction_porject/screenDart/chattpage/chatPage.dart';
+import 'package:auction_porject/screenDart/mainpage/mainPage.dart';
+import 'package:auction_porject/screenDart/mypage/mypage.dart';
+import 'package:auction_porject/screenDart/mypage/currentTransactionPop.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
-class changemoney extends StatelessWidget {
-  const changemoney({super.key});
+class pointpayment extends StatelessWidget {
+  const pointpayment({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,16 +15,21 @@ class changemoney extends StatelessWidget {
       child: MaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            title: Text("Auction")
+            backgroundColor: Color.fromRGBO(166, 204, 229, 1),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
           ),
 
           body: Padding(
-              padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
-            child:
-            SingleChildScrollView(
+            padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
+            child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
+                children: <Widget> [
                   Row(
                     children: <Widget> [
                       CircleAvatar(
@@ -60,6 +68,8 @@ class changemoney extends StatelessWidget {
                           ),
                         ],
                       ),
+
+
                     ],
                   ),
 
@@ -72,7 +82,7 @@ class changemoney extends StatelessWidget {
 
                   Row(
                     children: <Widget> [
-                      Text('변환포인트' ,
+                      Text('충전금액' ,
                         style: TextStyle(
                           fontSize: 15.0,
                           color: Colors.black,
@@ -83,25 +93,24 @@ class changemoney extends StatelessWidget {
                     ],
                   ),
 
-                  Container(
-                    child: new Flexible(
-                      child: TextField(
+                Container(
+                  child: new Flexible(
+                    child: TextField(
                         style: TextStyle(fontSize: 15),
                         textAlign: TextAlign.center,
                         decoration: InputDecoration(
-                            hintText: "최대 변환 포인트 : 보유포인트 원"
-                        ),
+                          hintText: "최소 충전 금액 : 5000원"
                       ),
                     ),
-                    width: 340,
                   ),
+                    width: 340,
+                ),
 
                   SizedBox(height: 20),
 
-
                   Row(
                     children: <Widget> [
-                      Text('입금 받을 계좌' ,
+                      Text('출금 계좌' ,
                         style: TextStyle(
                           fontSize: 15.0,
                           color: Colors.black,
@@ -118,42 +127,70 @@ class changemoney extends StatelessWidget {
                     child: Row(
                       children: <Widget>[
                         OutlinedButton(
-                          onPressed: () => {},
-                          child: Text("변환"),
+                            onPressed: () => {},
+                          child: Text("충전"),
 
                         )
 
                       ],
                     ),
                   ),
-
                   SizedBox(height: 20),
-
                 ],
-
-
               ),
             ),
           ),
 
           bottomNavigationBar: BottomAppBar(
-            child: SizedBox(
-              height: 20,
+            color: Color(0xFFB0E0E6),
+            child: Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Icon(Icons.home),
-                  Icon(Icons.chat_bubble),
-                  Icon(Icons.person),
-                  GestureDetector(
-                    onTap: (){
+                  IconButton(
+                    icon: Icon(Icons.home),
+                    color: Colors.black,
+                    iconSize: 35,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MainPage()),
+                      );
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.chat),
+                    color: Colors.grey,
+                    iconSize: 35,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ChatPage()),
+                      );
+                    },
+
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.person),
+                    color: Colors.grey,
+                    iconSize: 35,
+                    onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => mypage()),
                       );
                     },
-                    child: Icon(Icons.arrow_back),
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.swap_horiz),
+                    color: Colors.grey,
+                    iconSize: 35,
+                    onPressed: () {
+                      showCurrentTransaction(context); // 팝업 다이얼로그 호출
+                    },
                   ),
                 ],
               ),

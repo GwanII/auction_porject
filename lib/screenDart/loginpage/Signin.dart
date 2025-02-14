@@ -1,9 +1,9 @@
-import 'package:auction_porject/screenDart/Create_New_Account.dart';
-import 'package:auction_porject/screenDart/evaluation.dart';
-import 'package:auction_porject/screenDart/lostidpw.dart';
-import 'package:auction_porject/screenDart/sellerDetail.dart';
-import 'package:auction_porject/screenDart/servicecenter.dart';
-import 'package:auction_porject/screenDart/setting.dart';
+import 'package:auction_porject/screenDart/loginpage/Create_New_Account.dart';
+import 'package:auction_porject/screenDart/settingpage/evaluation.dart';
+import 'package:auction_porject/screenDart/loginpage/lostidpw.dart';
+import 'package:auction_porject/screenDart/mypage/sellerDetail.dart';
+import 'package:auction_porject/screenDart/settingpage/servicecenter.dart';
+import 'package:auction_porject/screenDart/settingpage/setting.dart';
 import 'package:flutter/material.dart';
 
 class Signin extends StatefulWidget {

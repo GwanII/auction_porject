@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:auction_porject/screenDart/mypage.dart';
+import 'package:auction_porject/screenDart/mypage/mypage.dart';
 import 'package:flutter/foundation.dart';
 
 class profile extends StatelessWidget {

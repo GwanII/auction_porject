@@ -1,4 +1,4 @@
-import 'package:auction_porject/screenDart/servicecenter.dart';
+import 'package:auction_porject/screenDart/settingpage/servicecenter.dart';
 import 'package:flutter/material.dart';
 
 class sellerDetail extends StatefulWidget {
