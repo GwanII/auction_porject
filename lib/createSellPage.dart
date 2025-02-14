@@ -38,7 +38,7 @@ class _CreateSellPageState extends State<CreateSellPage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.only(left: 20.0),
           child: Form(
             key: _formKey,
             child: Column(

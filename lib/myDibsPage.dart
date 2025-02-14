@@ -23,7 +23,7 @@ class MyDibsPage extends StatelessWidget {
         itemCount: favoriteItems.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.only(left: 20.0),
             child: ListTile(
               leading: Container(
                 width: 50,

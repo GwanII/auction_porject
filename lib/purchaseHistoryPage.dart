@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'currentTransactionPop.dart'; // 팝업 다이얼로그가 정의된 파일을 임포트
 
 class PurchaseHistoryPage extends StatelessWidget {
   final List<Map<String, String>> purchasingItems = [
@@ -99,6 +100,14 @@ class PurchaseHistoryPage extends StatelessWidget {
                   color: Colors.grey,
                   iconSize: 35,
                   onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(Icons.swap_horiz),
+                  color: Colors.grey,
+                  iconSize: 35,
+                  onPressed: () {
+                    showCurrentTransaction(context); // 팝업 다이얼로그 호출
+                  },
                 ),
               ],
             ),

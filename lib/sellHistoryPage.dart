@@ -62,23 +62,29 @@ class SellHistoryPage extends StatelessWidget {
         body: TabBarView(
           children: [
             // 판매중인 상품 목록
-            ListView.builder(
-              itemCount: sellingItems.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(sellingItems[index]),
-                );
-              },
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: ListView.builder(
+                itemCount: sellingItems.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text(sellingItems[index]),
+                  );
+                },
+              ),
             ),
             // 판매 완료된 상품 목록
-            ListView.builder(
-              itemCount: soldItems.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(soldItems[index]),
-                  onTap: () => _showAuctionDetails(context, soldItems[index]),
-                );
-              },
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: ListView.builder(
+                itemCount: soldItems.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text(soldItems[index]),
+                    onTap: () => _showAuctionDetails(context, soldItems[index]),
+                  );
+                },
+              ),
             ),
           ],
         ),

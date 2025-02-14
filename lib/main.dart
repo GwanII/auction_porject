@@ -24,10 +24,9 @@ class MyApp extends StatelessWidget {
       ),
       //home: SellHistoryPage(),
       //home: CreateSellPage(),
-      home: sellItemPage(), //고다은이 이것보다 좋은 페이지 만들었음.
+      //home: sellItemPage(), //고다은이 이것보다 좋은 페이지 만들었음.
       //home: MyDibsPage(),
-      //home: PurchaseHistoryPage(),
-
+      home: PurchaseHistoryPage(),
 
     );
   }
