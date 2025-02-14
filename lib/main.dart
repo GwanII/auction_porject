@@ -1,3 +1,4 @@
+import 'package:auction_porject/screenDart/mainPage.dart';
 import 'package:flutter/material.dart';
 import 'screenDart/mypage.dart'; // MyPageScreen 파일 가져오기
 import 'screenDart/pointpaymentpage.dart';
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Signin(),
+      home: MainPage(),
     );
   }
 }
