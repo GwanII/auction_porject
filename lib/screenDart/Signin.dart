@@ -95,7 +95,7 @@ class _SigninState extends State<Signin> {
                   minimumSize: Size(370,40),
                 ),
                 onPressed: () {
-                  // 아이디, 비밀번호가 일치하면 메인화면으로 이동하는 코드
+                    // 아이디, 비밀번호가 일치하면 메인화면으로 이동하는 코드
                   showDialog(
                     context: context,
                     builder: (context){
