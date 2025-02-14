@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screenDart/mypage.dart'; // MyPageScreen 파일 가져오기
+import 'screenDart/pointpaymentpage.dart';
 
 void main() {
   runApp(MyApp());

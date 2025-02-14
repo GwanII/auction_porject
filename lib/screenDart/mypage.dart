@@ -1,3 +1,7 @@
+import 'package:auction_porject/screenDart/changemoneypage.dart';
+import 'package:auction_porject/screenDart/pointpaymentpage.dart';
+import 'package:auction_porject/screenDart/payhistorypage.dart';
+import 'package:auction_porject/screenDart/profilepage.dart';
 import 'package:flutter/material.dart';
 
 class mypage extends StatelessWidget{
@@ -5,13 +9,11 @@ class mypage extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       home : Scaffold(
-        backgroundColor: Colors.white,
-
 
         appBar: AppBar(
+          backgroundColor: Color.fromRGBO(166,204,229, 1),
           title: Text('Auction'),
         ),
-
 
         body: Padding(
           padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
@@ -20,16 +22,39 @@ class mypage extends StatelessWidget{
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget> [
               Row(
-                children: <Widget> [
-                  Text('프로필' ,
-                  style: TextStyle(
-                    fontSize: 15.0,
-                    color: Colors.black,
-                    letterSpacing: 2.0,
+                children: [
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => profile()),
+                      );
+                    },
+
+                    child: Text('프로필' ,
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        letterSpacing: 2.0,
+                      ),
                     ),
                   ),
-                  SizedBox(width: 260),
-                  Icon(Icons.keyboard_arrow_right),
+
+                  SizedBox(width: 250),
+
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => profile()),
+                      );
+                    },
+
+                    child: Icon(Icons.keyboard_arrow_right),
+                  ),
+
                 ],
               ),
 
@@ -104,16 +129,37 @@ class mypage extends StatelessWidget{
 
               Row(
                 children: [
-                  Text('포인트 결제' ,
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      letterSpacing: 2.0,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => pointpayment()),
+                      );
+                    },
+
+                    child: Text('포인트 결제' ,
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        letterSpacing: 2.0,
+                      ),
                     ),
                   ),
 
                   SizedBox(width: 200),
-                  Icon(Icons.keyboard_arrow_right),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => pointpayment()),
+                      );
+                    },
+
+                    child: Icon(Icons.keyboard_arrow_right),
+                  ),
+
                 ],
               ),
 
@@ -121,16 +167,36 @@ class mypage extends StatelessWidget{
 
               Row(
                 children: [
-                  Text('포인트 현금 변환' ,
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      letterSpacing: 2.0,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => changemoney()),
+                      );
+                    },
+
+                    child: Text('포인트 현금 변환' ,
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        letterSpacing: 2.0,
+                      ),
                     ),
                   ),
 
                   SizedBox(width: 153),
-                  Icon(Icons.keyboard_arrow_right),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => changemoney()),
+                      );
+                    },
+
+                    child: Icon(Icons.keyboard_arrow_right),
+                  ),
                 ],
               ),
 
@@ -138,16 +204,36 @@ class mypage extends StatelessWidget{
 
               Row(
                 children: [
-                  Text('포인트 구매 내역' ,
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      letterSpacing: 2.0,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => payhistory()),
+                      );
+                    },
+
+                    child: Text('포인트 구매 내역' ,
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        letterSpacing: 2.0,
+                      ),
                     ),
                   ),
 
                   SizedBox(width: 153),
-                  Icon(Icons.keyboard_arrow_right),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => payhistory()),
+                      );
+                    },
+
+                    child: Icon(Icons.keyboard_arrow_right),
+                  ),
                 ],
               ),
 
