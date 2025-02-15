@@ -1,9 +1,15 @@
 import 'package:auction_porject/screenDart/chattpage/chatPage.dart';
 import 'package:auction_porject/screenDart/mainpage/mainPage.dart';
 import 'package:auction_porject/screenDart/mypage/changemoneypage.dart';
+import 'package:auction_porject/screenDart/mypage/myDibsPage.dart';
 import 'package:auction_porject/screenDart/mypage/pointpaymentpage.dart';
 import 'package:auction_porject/screenDart/mypage/payhistorypage.dart';
 import 'package:auction_porject/screenDart/mypage/profilepage.dart';
+import 'package:auction_porject/screenDart/mypage/purchaseHistoryPage.dart';
+import 'package:auction_porject/screenDart/mypage/sellHistoryPage.dart';
+import 'package:auction_porject/screenDart/settingpage/evaluation.dart';
+import 'package:auction_porject/screenDart/settingpage/servicecenter.dart';
+import 'package:auction_porject/screenDart/settingpage/setting.dart';
 import 'currentTransactionPop.dart';
 import 'package:flutter/material.dart';
 
@@ -258,16 +264,37 @@ class mypage extends StatelessWidget{
 
               Row(
                 children: [
-                  Text('물건 구매 내역' ,
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      letterSpacing: 2.0,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PurchaseHistoryPage()),
+                      );
+                    },
+
+                    child: Text('물건 구매 내역' ,
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        letterSpacing: 2.0,
+                      ),
                     ),
                   ),
 
-                  SizedBox(width: 171),
-                  Icon(Icons.keyboard_arrow_right),
+                  SizedBox(width: 170),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PurchaseHistoryPage()),
+                      );
+                    },
+
+                    child: Icon(Icons.keyboard_arrow_right),
+                  ),
+
                 ],
               ),
 
@@ -275,16 +302,37 @@ class mypage extends StatelessWidget{
 
               Row(
                 children: [
-                  Text('물건 판매 내역' ,
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      letterSpacing: 2.0,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SellHistoryPage()),
+                      );
+                    },
+
+                    child: Text('물건 판매 내역' ,
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        letterSpacing: 2.0,
+                      ),
                     ),
                   ),
 
-                  SizedBox(width: 171),
-                  Icon(Icons.keyboard_arrow_right),
+                  SizedBox(width: 170),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SellHistoryPage()),
+                      );
+                    },
+
+                    child: Icon(Icons.keyboard_arrow_right),
+                  ),
+
                 ],
               ),
 
@@ -292,16 +340,37 @@ class mypage extends StatelessWidget{
 
               Row(
                 children: [
-                  Text('찜 목록' ,
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      letterSpacing: 2.0,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MyDibsPage()),
+                      );
+                    },
+
+                    child: Text('찜 목록' ,
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        letterSpacing: 2.0,
+                      ),
                     ),
                   ),
 
-                  SizedBox(width: 239),
-                  Icon(Icons.keyboard_arrow_right),
+                  SizedBox(width: 240),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MyDibsPage()),
+                      );
+                    },
+
+                    child: Icon(Icons.keyboard_arrow_right),
+                  ),
+
                 ],
               ),
 
@@ -324,16 +393,37 @@ class mypage extends StatelessWidget{
 
               Row(
                 children: [
-                  Text('고객 센터' ,
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      letterSpacing: 2.0,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => servicecenter()),
+                      );
+                    },
+
+                    child: Text('고객센터' ,
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        letterSpacing: 2.0,
+                      ),
                     ),
                   ),
 
-                  SizedBox(width: 220),
-                  Icon(Icons.keyboard_arrow_right),
+                  SizedBox(width: 225),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => servicecenter()),
+                      );
+                    },
+
+                    child: Icon(Icons.keyboard_arrow_right),
+                  ),
+
                 ],
               ),
 
@@ -341,33 +431,75 @@ class mypage extends StatelessWidget{
 
               Row(
                 children: [
-                  Text('사용자 신고' ,
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      letterSpacing: 2.0,
-                    ),
-                  ),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => evaluation()),
+                      );
+                    },
 
-                  SizedBox(width: 200),
-                  Icon(Icons.keyboard_arrow_right),
-                ],
-              ),
-
-              SizedBox(height: 10),
-
-              Row(
-                children: [
-                  Text('앱 평가' ,
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      letterSpacing: 2.0,
+                    child: Text('앱 평가' ,
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        letterSpacing: 2.0,
+                      ),
                     ),
                   ),
 
                   SizedBox(width: 240),
-                  Icon(Icons.keyboard_arrow_right),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => evaluation()),
+                      );
+                    },
+
+                    child: Icon(Icons.keyboard_arrow_right),
+                  ),
+
+                ],
+              ),
+
+              SizedBox(height: 10),
+
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => setting()),
+                      );
+                    },
+
+                    child: Text('설정' ,
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        letterSpacing: 2.0,
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(width: 270),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => setting()),
+                      );
+                    },
+
+                    child: Icon(Icons.keyboard_arrow_right),
+                  ),
+
                 ],
               ),
 
@@ -379,7 +511,7 @@ class mypage extends StatelessWidget{
         ),
 
         bottomNavigationBar: BottomAppBar(
-          color: Color(0xFFB0E0E6),
+          color: Color.fromRGBO(166,204,229, 1),
           child: Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

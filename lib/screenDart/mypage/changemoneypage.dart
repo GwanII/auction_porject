@@ -146,7 +146,7 @@ class changemoney extends StatelessWidget {
           ),
 
           bottomNavigationBar: BottomAppBar(
-            color: Color(0xFFB0E0E6),
+            color: Color.fromRGBO(166,204,229, 1),
             child: Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,

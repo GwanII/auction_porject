@@ -1,4 +1,6 @@
 import 'package:auction_porject/screenDart/loginpage/Create_New_Account.dart';
+import 'package:auction_porject/screenDart/mainpage/mainPage.dart';
+import 'package:auction_porject/screenDart/mypage/mypage.dart';
 import 'package:auction_porject/screenDart/settingpage/evaluation.dart';
 import 'package:auction_porject/screenDart/loginpage/lostidpw.dart';
 import 'package:auction_porject/screenDart/mypage/sellerDetail.dart';
@@ -96,14 +98,10 @@ class _SigninState extends State<Signin> {
                 ),
                 onPressed: () {
                     // 아이디, 비밀번호가 일치하면 메인화면으로 이동하는 코드
-                  showDialog(
-                    context: context,
-                    builder: (context){
-                      return AlertDialog(
-                        title: Text("로그인 성공!"),
-                        content: Text("일치하지 않는 아이디, 비밀번호 입니다."),
-                      );
-                    }
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MainPage()),
                   );
                 },
                 child: Text('로그인',

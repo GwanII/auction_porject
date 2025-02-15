@@ -1,3 +1,7 @@
+import 'package:auction_porject/screenDart/chattpage/chatPage.dart';
+import 'package:auction_porject/screenDart/mainpage/mainPage.dart';
+import 'package:auction_porject/screenDart/mypage/mypage.dart';
+import 'package:auction_porject/screenDart/mypage/currentTransactionPop.dart';
 import 'package:flutter/material.dart';
 
 class SellHistoryPage extends StatelessWidget {
@@ -89,7 +93,7 @@ class SellHistoryPage extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: BottomAppBar(
-          color: Color(0xFFB0E0E6),
+          color: Color.fromRGBO(166,204,229, 1),
           child: Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -98,19 +102,46 @@ class SellHistoryPage extends StatelessWidget {
                   icon: Icon(Icons.home),
                   color: Colors.black,
                   iconSize: 35,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainPage()),
+                    );
+                  },
                 ),
                 IconButton(
                   icon: Icon(Icons.chat),
                   color: Colors.grey,
                   iconSize: 35,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ChatPage()),
+                    );
+                  },
+
                 ),
                 IconButton(
                   icon: Icon(Icons.person),
                   color: Colors.grey,
                   iconSize: 35,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => mypage()),
+                    );
+                  },
+                ),
+                IconButton(
+                  icon: Icon(Icons.swap_horiz),
+                  color: Colors.grey,
+                  iconSize: 35,
+                  onPressed: () {
+                    showCurrentTransaction(context); // 팝업 다이얼로그 호출
+                  },
                 ),
               ],
             ),

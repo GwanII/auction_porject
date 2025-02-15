@@ -1,3 +1,6 @@
+import 'package:auction_porject/screenDart/chattpage/chatPage.dart';
+import 'package:auction_porject/screenDart/mainpage/mainPage.dart';
+import 'package:auction_porject/screenDart/mypage/mypage.dart';
 import 'package:flutter/material.dart';
 import 'currentTransactionPop.dart'; // 팝업 다이얼로그가 정의된 파일을 임포트
 
@@ -78,7 +81,7 @@ class PurchaseHistoryPage extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: BottomAppBar(
-          color: Color(0xFFB0E0E6),
+          color: Color.fromRGBO(166,204,229, 1),
           child: Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -87,19 +90,38 @@ class PurchaseHistoryPage extends StatelessWidget {
                   icon: Icon(Icons.home),
                   color: Colors.black,
                   iconSize: 35,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainPage()),
+                    );
+                  },
                 ),
                 IconButton(
                   icon: Icon(Icons.chat),
                   color: Colors.grey,
                   iconSize: 35,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ChatPage()),
+                    );
+                  },
+
                 ),
                 IconButton(
                   icon: Icon(Icons.person),
                   color: Colors.grey,
                   iconSize: 35,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => mypage()),
+                    );
+                  },
                 ),
                 IconButton(
                   icon: Icon(Icons.swap_horiz),

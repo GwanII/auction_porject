@@ -1,4 +1,8 @@
+import 'package:auction_porject/screenDart/chattpage/chatPage.dart';
 import 'package:auction_porject/screenDart/loginpage/Signin.dart';
+import 'package:auction_porject/screenDart/mainpage/mainPage.dart';
+import 'package:auction_porject/screenDart/mypage/mypage.dart';
+import 'package:auction_porject/screenDart/mypage/currentTransactionPop.dart';
 import 'package:flutter/material.dart';
 
 class setting extends StatefulWidget {
@@ -111,7 +115,11 @@ class _settingState extends State<setting> {
                 color: Colors.black,
                 iconSize: 35,
                 onPressed: () {
-
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MainPage()),
+                  );
                 },
               ),
               IconButton(
@@ -119,15 +127,32 @@ class _settingState extends State<setting> {
                 color: Colors.grey,
                 iconSize: 35,
                 onPressed: () {
-
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ChatPage()),
+                  );
                 },
+
               ),
               IconButton(
                 icon: Icon(Icons.person),
                 color: Colors.grey,
                 iconSize: 35,
                 onPressed: () {
-
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => mypage()),
+                  );
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.swap_horiz),
+                color: Colors.grey,
+                iconSize: 35,
+                onPressed: () {
+                  showCurrentTransaction(context); // 팝업 다이얼로그 호출
                 },
               ),
             ],
