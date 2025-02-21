@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//찜 기능, 검색 기능 .. ㅜㅜ? 하단바 어디감
+//찜 기능...
+
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
@@ -33,55 +34,93 @@ class MainPage extends StatelessWidget {
 
       body: Padding(
         padding: EdgeInsets.all(20.0),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 15.0,
-            mainAxisSpacing: 15.0,
-            childAspectRatio: 3 / 4,
-          ),
-          itemCount: 8,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => PostingDetailPage()),
-                );
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10.0),
-                  border: Border.all(color: Colors.grey),
+        child: Column(
+          children: [
+            // 검색창 추가
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              margin: EdgeInsets.only(bottom: 15), // 아래 여백 추가
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.grey),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: "찾고 싶은 물건을 검색!",
+                        hintStyle: TextStyle(color: Colors.grey),
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.search, color: Colors.black54),
+                    onPressed: () {
+                      // 검색 기능 구현 가능
+                    },
+                  ),
+                ],
+              ),
+            ),
+
+            // GridView 추가
+            Expanded(
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 15.0,
+                  mainAxisSpacing: 15.0,
+                  childAspectRatio: 3 / 4,
                 ),
-                child: Padding(
-                  padding: EdgeInsets.all(13.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('3DS 닌텐도 판매합니다.', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
-                      SizedBox(height: 10.0),
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.grey[300],
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Center(child: Image.asset('assets/sample.jpg'),),
+                itemCount: 8,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PostingDetailPage()),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.0),
+                        border: Border.all(color: Colors.grey),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(13.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('3DS 닌텐도 판매합니다.', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
+                            SizedBox(height: 10.0),
+                            Expanded(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[300],
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: Center(child: Image.asset("assets/sample.jpg"),),
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text('최소 입찰가: 6000', style: TextStyle(fontSize: 18.0)),
+                            Text('~ 01/09', style: TextStyle(fontSize: 18.0)),
+                          ],
                         ),
                       ),
-                      SizedBox(height: 10.0),
-                      Text('최소 입찰가: 6000', style: TextStyle(fontSize: 18.0)),
-                      Text('~ 01/09', style: TextStyle(fontSize: 18.0)),
-                    ],
-                  ),
-                ),
+                    ),
+                  );
+                },
               ),
-            );
-          },
+            ),
+          ],
         ),
       ),
+
 
       bottomNavigationBar: BottomAppBar(
         color: Color.fromRGBO(166,204,229, 1),
