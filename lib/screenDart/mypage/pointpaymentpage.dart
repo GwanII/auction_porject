@@ -127,7 +127,7 @@ class pointpayment extends StatelessWidget {
                     child: Row(
                       children: <Widget>[
                         OutlinedButton(
-                            onPressed: () => {},
+                            onPressed: () => _showPaymentCompleteMessage(context),
                           child: Text("충전"),
 
                         )
@@ -200,4 +200,24 @@ class pointpayment extends StatelessWidget {
       ),
     );
   }
+}
+
+void _showPaymentCompleteMessage(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('충전 완료'),
+        content: Text('충전이 완료되었습니다.'),
+        actions: <Widget>[
+          TextButton(
+            child: Text('확인'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
 }

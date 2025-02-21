@@ -127,7 +127,7 @@ class changemoney extends StatelessWidget {
                     child: Row(
                       children: <Widget>[
                         OutlinedButton(
-                          onPressed: () => {},
+                          onPressed: () => _showPaymentCompleteMessage(context),
                           child: Text("변환"),
 
                         )
@@ -139,7 +139,6 @@ class changemoney extends StatelessWidget {
                   SizedBox(height: 20),
 
                 ],
-
 
               ),
             ),
@@ -163,6 +162,7 @@ class changemoney extends StatelessWidget {
                       );
                     },
                   ),
+
                   IconButton(
                     icon: Icon(Icons.chat),
                     color: Colors.grey,
@@ -174,8 +174,8 @@ class changemoney extends StatelessWidget {
                             builder: (context) => ChatPage()),
                       );
                     },
-
                   ),
+
                   IconButton(
                     icon: Icon(Icons.person),
                     color: Colors.grey,
@@ -188,6 +188,7 @@ class changemoney extends StatelessWidget {
                       );
                     },
                   ),
+
                   IconButton(
                     icon: Icon(Icons.swap_horiz),
                     color: Colors.grey,
@@ -196,6 +197,7 @@ class changemoney extends StatelessWidget {
                       showCurrentTransaction(context); // 팝업 다이얼로그 호출
                     },
                   ),
+
                 ],
               ),
             ),
@@ -204,4 +206,24 @@ class changemoney extends StatelessWidget {
       ),
     );
   }
+}
+
+void _showPaymentCompleteMessage(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('변환 완료'),
+        content: Text('변환이 완료되었습니다.'),
+        actions: <Widget>[
+          TextButton(
+            child: Text('확인'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
 }
